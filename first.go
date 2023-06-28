@@ -1,4 +1,4 @@
-package goland
+package main
 
 import "fmt"
 
