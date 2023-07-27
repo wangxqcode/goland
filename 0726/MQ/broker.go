@@ -113,34 +113,7 @@ func (b *BrokerImpl)setConditions(capacity int)  {
 	b.capacity = capacity
 }
 
-//func (b *BrokerImpl) unsubscribe(topic string, sub <-chan interface{}) error {
-//	select {
-//	case <-b.exit:
-//		return errors.New("broker closed")
-//	default:
-//	}
-//
-//	b.RLock()
-//	subscribers, ok := b.topics[topic]
-//	b.RUnlock()
-//
-//	if !ok {
-//		return nil
-//	}
-//	// delete subscriber
-//	var newSubs []chan interface{}
-//	for _, subscriber := range subscribers {
-//		if subscriber == sub {
-//			continue
-//		}
-//		newSubs = append(newSubs, subscriber)
-//	}
-//
-//	b.Lock()
-//	b.topics[topic] = newSubs
-//	b.Unlock()
-//	return nil
-//}
+
 
 func (b *BrokerImpl) unsubscribe (topic string, sub <-chan interface{}) error {
 
